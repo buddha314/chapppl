@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+cpp/src/worker.h 
+chpl/src/cppsrc/
+build/

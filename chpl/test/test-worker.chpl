@@ -1,0 +1,3 @@
+use Worker;
+
+writeln(doWork());
