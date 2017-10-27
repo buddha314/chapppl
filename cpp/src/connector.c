@@ -7,14 +7,14 @@
 extern void chpl_library_init(int argc, char* argv[]);
 extern void chpl_library_finalize(void);
 
-int main() {
+int main(int argc, char* argv[]) {
   const char *conninfo;
   PGconn     *conn;
   PGresult   *res;
   int         nFields;
   int         i,
-              j;
-  char *w;
+              j,
+              w;
   printf("Hello World\n");
 
   conninfo = "user=buddha dbname=buddha host=localhost";
@@ -28,6 +28,9 @@ int main() {
   for (i=0; i<PQntuples(res); i++) {
     printf("results! %s\n ", PQgetvalue(res,i,0));
   }
+  chpl_library_init(argc, argv);
   w = doWork();
-  printf("Work is %s \n", w);
+  //w = 17;
+  printf("Work is %d \n", w);
+  chpl_library_finalize();
 }

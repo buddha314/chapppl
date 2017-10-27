@@ -1,6 +1,4 @@
-module Worker {
-  export proc doWork(): string {
-    return "hey";
+  export proc doWork(): int{
+    var m: int = 17;
+    return m;
   }
-
-}
