@@ -1,1 +1,2 @@
 int doWork();
+char* sayWork();
